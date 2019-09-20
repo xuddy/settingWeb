@@ -53,9 +53,12 @@ firewall-cmd --reload
 配置开机自启动
 
 ```bash
-vi /etc/rc.local
+vi /etc/rc.d/rc.local
 在最后添加一行
-/usr/local/nginx/sbin/nginx
+/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+
+# 修改文件权限
+chmod +x /etc/rc.d/rc.local
 ```
 
 至此，Nginx 安装完毕
